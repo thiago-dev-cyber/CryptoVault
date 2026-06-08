@@ -1,0 +1,14 @@
+image: python:3.11
+
+stages:
+  - test
+
+before_script:
+  - python -V
+  - pip install -U pip
+  - pip install -r requeriments.txt 
+
+tests:
+  stage: test
+  script:
+    - python -m unittest discover -v
